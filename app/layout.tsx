@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Roboto } from 'next/font/google'
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
 			<body className={`${roboto.variable} font-sans`}>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

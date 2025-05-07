@@ -20,7 +20,7 @@ export default function Header() {
 			<nav className='flex justify-between p-4 items-center font-sans md:py-6 md:px-20'>
 				<div className='md:flex md:items-center gap-12'>
 					<Link href="/">
-						<Logo />
+						<Logo/>
 					</Link>
 					{ !isMobile && (
 						<ul className='flex gap-12'>

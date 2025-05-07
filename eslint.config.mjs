@@ -11,10 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
 	...compat.extends(
-		"next/core-web-vitals", "next/typescript", "prettier"),
-	{
-		rules: {indent: ["error", "tab"],}
-	}
+		"next/core-web-vitals", "next/typescript", "prettier", "plugin:tailwindcss/recommended"),
 ];
 
 export default eslintConfig;
