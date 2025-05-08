@@ -4,10 +4,34 @@ import Blob1 from "./svg/Blob1";
 import Image from "next/image";
 import videoPreviewPhoto from "@/app/assets/videoPreviewPhoto.jpg";
 import { FaCheck } from "react-icons/fa6";
+import SecondSectionStarsDots from './svg/SecondSectionStarsDots'
+import { title } from "process";
 
 export default function SecondSection() {
+  const cardsInfo = [
+    {
+      flag: "Featured",
+      title: "The map of mathematics",
+      body: "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.",
+      color: 'purple'
+    },
+    {
+      flag: "Popular",
+      title: "Design for how people think",
+      body: "Aliquam ut euismod condimentum elementum ultricies volutpat sit non. ",
+      color: 'blue'
+    },
+    {
+      flag: "New",
+      title: "International & commercial law",
+      body: "Molestie integer eu arcu, mauris bibendum rhoncus imperdiet dui. ",
+      color: 'green'
+    },
+
+  ]
   return (
     <section className="flex gap-12 flex-col md:grid md:grid-cols-2 py-12 px-4 md:px-20 items-center font-sans">
+      <SecondSectionStarsDots className="absolute justify-self-center"/>
       <div className="flex flex-col gap-8 md:gap-20">
         <div className="flex flex-col md:gap-8 gap-6">
           <h2 className="text-2xl md:text-6xl font-bold leading-none">
@@ -44,23 +68,32 @@ export default function SecondSection() {
         </div>
       </div>
 
-      <div className="relative max-w-2xl w-full">
+      <div className="relative max-w-2xl w-full md:justify-self-center">
         {/* Decorative orange half-circle */}
-        <Blob1 className="absolute -left-20 top-0 w-64 h-64 z-0    md:block" />
+        <Blob1 className="absolute -left-20 top-0 w-64 h-64 -z-10 md:block md:h-full md:-w-[60%]" />
 
         {/* Main image & cards */}
         <div className="relative z-10">
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src={videoPreviewPhoto}
-              alt="App preview"
-              className="w-full object-cover"
-            />
+            <div className="relative">
+              <span className="absolute -top-5 text-5xl pl-2">
+                <ul className="flex">
+                  <li className="text-red-500">.</li>
+                  <li className="text-yellow-500">.</li>
+                  <li className="text-green-500">.</li>
+                </ul>
+              </span>
+              <Image
+                src={videoPreviewPhoto}
+                alt="App preview"
+                className="w-full object-cover px-2 pb-2 pt-8 rounded-xl shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.1)]"
+              />
+              <span className="bg-white absolute top-0 w-full h-full -z-10 shadow-[0px_25px_50px_-12px_rgba(0,_0,_0,_0.1)]"/>
             <div className="absolute inset-0 flex items-center justify-center">
-              <button className="bg-white/80 p-3 rounded-full shadow-xl hover:scale-105 transition">
+              <button className="bg-black/50 p-6 rounded-full shadow-xl hover:scale-105 transition">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 text-black"
+                  className="w-6 h-6 text-white"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -72,46 +105,29 @@ export default function SecondSection() {
                 </svg>
               </button>
             </div>
+            </div>
           </div>
 
-          {/* Cards */}
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow border-t-4 border-purple-400">
-              <span className="text-xs font-medium text-purple-600">
-                Featured
-              </span>
-              <h4 className="font-semibold mt-1">The map of mathematics</h4>
-              <p className="text-sm text-gray-600 mt-1">
-                Egestas elit ut scelerisque ut eu sit vitae...
-              </p>
-              <button className="mt-2 text-blue-600 text-sm font-medium hover:underline">
-                Take Lesson
-              </button>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow border-t-4 border-blue-400">
-              <span className="text-xs font-medium text-blue-600">Popular</span>
-              <h4 className="font-semibold mt-1">
-                Design for how people think
-              </h4>
-              <p className="text-sm text-gray-600 mt-1">
-                Aliquam et euismod condimentum...
-              </p>
-              <button className="mt-2 text-blue-600 text-sm font-medium hover:underline">
-                Take Lesson
-              </button>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow border-t-4 border-green-400">
-              <span className="text-xs font-medium text-green-600">New</span>
-              <h4 className="font-semibold mt-1">
-                International & commercial law
-              </h4>
-              <p className="text-sm text-gray-600 mt-1">
-                Molestie integer eu arcu mauris bibendum...
-              </p>
-              <button className="mt-2 text-blue-600 text-sm font-medium hover:underline">
-                Take Lesson
-              </button>
-            </div>
+          {/* Cards 158 */}
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:relative md:-top-24 md:-left-12">
+            {
+              cardsInfo.map((card, idx) => {
+                return (
+                  <div key={idx} className="bg-white p-4 rounded-lg shadow w-full md:max-w-[200px]">
+                    <span className={`text-xs font-medium text-${card.color}-800 bg-${card.color}-100 py-1 px-2 rounded-sm`}>
+                      {card.flag}
+                    </span>
+                    <h4 className="font-semibold mt-1">{card.title}</h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      {card.body}
+                    </p>
+                    <button className="mt-4 text-blue-600 text-sm font-medium hover:underline w-full py-2 px-3 border-2 rounded-lg">
+                      Take Lesson
+                    </button>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>

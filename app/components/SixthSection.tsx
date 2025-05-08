@@ -75,7 +75,7 @@ export default function SixthSection() {
 
 	// Get all testimonials in the right order for the carousel
 	return (
-		<section className="w-full py-16 px-4 md:px-8 bg-white">
+		<section className="w-full py-16 px-4 md:px-8 bg-white overflow-x-hidden">
 			<div className="max-w-7xl mx-auto">
 				<div className="flex justify-between items-center mb-12">
 					<h2 className="text-3xl md:text-4xl font-bold text-[#0A1128]">What everyone says</h2>
