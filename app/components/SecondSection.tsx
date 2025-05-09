@@ -5,7 +5,6 @@ import Image from "next/image";
 import videoPreviewPhoto from "@/app/assets/videoPreviewPhoto.jpg";
 import { FaCheck } from "react-icons/fa6";
 import SecondSectionStarsDots from './svg/SecondSectionStarsDots'
-import { title } from "process";
 
 export default function SecondSection() {
   const cardsInfo = [
@@ -13,19 +12,23 @@ export default function SecondSection() {
       flag: "Featured",
       title: "The map of mathematics",
       body: "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.",
-      color: 'purple'
+      color: 'oklch(55.8% 0.288 302.321)',
+      bgColor: 'oklch(94.6% 0.033 307.174)'
     },
     {
       flag: "Popular",
       title: "Design for how people think",
       body: "Aliquam ut euismod condimentum elementum ultricies volutpat sit non. ",
-      color: 'blue'
+      color: 'oklch(54.6% 0.245 262.881)',
+      bgColor: 'oklch(93.2% 0.032 255.585)'
+
     },
     {
       flag: "New",
       title: "International & commercial law",
       body: "Molestie integer eu arcu, mauris bibendum rhoncus imperdiet dui. ",
-      color: 'green'
+      color: 'oklch(62.7% 0.194 149.214)',
+      bgColor: 'oklch(96.2% 0.044 156.743)'
     },
 
   ]
@@ -109,12 +112,12 @@ export default function SecondSection() {
           </div>
 
           {/* Cards 158 */}
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:relative md:-top-24 md:-left-12">
+          <div className="mt-4 flex gap-4 md:relative md:-top-24 md:-left-12">
             {
               cardsInfo.map((card, idx) => {
                 return (
                   <div key={idx} className="bg-white p-4 rounded-lg shadow w-full md:max-w-[200px]">
-                    <span className={`text-xs font-medium text-${card.color}-800 bg-${card.color}-100 py-1 px-2 rounded-sm`}>
+                    <span style={{backgroundColor: `${card.bgColor}`, color: `${card.color}`}} className={`text-xs font-medium py-1 px-2 rounded-sm`}>
                       {card.flag}
                     </span>
                     <h4 className="font-semibold mt-1">{card.title}</h4>
