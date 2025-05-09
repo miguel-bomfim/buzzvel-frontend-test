@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import OrangeUnderline from "./svg/OrangeUnderline";
 import Blob1 from "./svg/Blob1";
@@ -5,8 +7,14 @@ import Image from "next/image";
 import videoPreviewPhoto from "@/app/assets/videoPreviewPhoto.jpg";
 import { FaCheck } from "react-icons/fa6";
 import SecondSectionStarsDots from './svg/SecondSectionStarsDots'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useIsMobile } from '@/app/hooks/useIsMobile'
+
+import 'swiper/css';
 
 export default function SecondSection() {
+  const isMobile = useIsMobile()
+
   const cardsInfo = [
     {
       flag: "Featured",
@@ -73,7 +81,7 @@ export default function SecondSection() {
 
       <div className="relative max-w-2xl w-full md:justify-self-center">
         {/* Decorative orange half-circle */}
-        <Blob1 className="absolute -left-20 top-0 w-64 h-64 -z-10 md:block md:h-full md:-w-[60%]" />
+        <Blob1 className="absolute -left-20 top-0 -z-10 md:block h-full md:-w-[60%] w-[80%]" />
 
         {/* Main image & cards */}
         <div className="relative z-10">
@@ -111,27 +119,55 @@ export default function SecondSection() {
             </div>
           </div>
 
-          {/* Cards 158 */}
-          <div className="mt-4 flex gap-4 md:relative md:-top-24 md:-left-12">
-            {
-              cardsInfo.map((card, idx) => {
-                return (
-                  <div key={idx} className="bg-white p-4 rounded-lg shadow w-full md:max-w-[200px]">
-                    <span style={{backgroundColor: `${card.bgColor}`, color: `${card.color}`}} className={`text-xs font-medium py-1 px-2 rounded-sm`}>
-                      {card.flag}
-                    </span>
-                    <h4 className="font-semibold mt-1">{card.title}</h4>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {card.body}
-                    </p>
-                    <button className="mt-4 text-blue-600 text-sm font-medium hover:underline w-full py-2 px-3 border-2 rounded-lg">
-                      Take Lesson
-                    </button>
-                  </div>
-                )
-              })
-            }
-          </div>
+          {
+            isMobile ? (
+              <Swiper spaceBetween={16} slidesPerView={2} className="mt-4 flex relative -top-20 ml-6!">
+              {
+                cardsInfo.map((card, idx) => {
+                  return (
+                    <SwiperSlide key={idx} className="bg-white p-4 rounded-lg shadow w-full md:max-w-[200px]">
+                      <span style={{backgroundColor: `${card.bgColor}`, color: `${card.color}`}} className={`text-xs font-medium py-1 px-2 rounded-sm`}>
+                        {card.flag}
+                      </span>
+                      <h4 className="font-semibold mt-1">{card.title}</h4>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {card.body}
+                      </p>
+                      <button className="mt-4 text-blue-600 text-sm font-medium hover:underline w-full py-2 px-3 border-2 rounded-lg">
+                        Take Lesson
+                      </button>
+                    </SwiperSlide>
+                  )
+                })
+              }
+            </Swiper>
+
+            ) : (
+
+              <div className="mt-4 flex gap-4 md:relative md:-top-24 md:-left-12">
+              {
+                cardsInfo.map((card, idx) => {
+                  return (
+                    <div key={idx} className="bg-white p-4 rounded-lg shadow w-full md:max-w-[200px]">
+                      <span style={{backgroundColor: `${card.bgColor}`, color: `${card.color}`}} className={`text-xs font-medium py-1 px-2 rounded-sm`}>
+                        {card.flag}
+                      </span>
+                      <h4 className="font-semibold mt-1">{card.title}</h4>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {card.body}
+                      </p>
+                      <button className="mt-4 text-blue-600 text-sm font-medium hover:underline w-full py-2 px-3 border-2 rounded-lg">
+                        Take Lesson
+                      </button>
+                    </div>
+                  )
+                })
+              }
+            </div>
+
+            )
+          }
+
         </div>
       </div>
     </section>

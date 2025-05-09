@@ -9,7 +9,7 @@ export const useIsMobile = () => {
 		handleResize()
 		window.addEventListener('resize', handleResize)
 		return () => window.removeEventListener('resize', handleResize)
-	}, [])
+	}, [width])
 
 	return width < 768 ? true : false 
 }
