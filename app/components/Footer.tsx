@@ -1,7 +1,5 @@
 import Logo from '@/app/components/svg/Logo'
 
-// import { Globe, Euro, Plus } from 'lucide-react';
-
 export default function Footer() {
 	return (
 		<footer className="bg-[#0B0D21] text-white text-sm">
@@ -71,11 +69,8 @@ export default function Footer() {
 					<a href="#">Terms</a>
 					<a href="#">Privacy</a>
 					<a href="#">Contact</a>
-					{/* <Globe className="w-4 h-4" /> */}
 					<span>EN</span>
-					{/* <Euro className="w-4 h-4" /> */}
 					<span>EUR</span>
-					{/* <Plus className="w-4 h-4" /> */}
 				</div>
 			</div>
 		</footer>

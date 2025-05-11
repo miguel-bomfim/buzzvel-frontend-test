@@ -9,7 +9,6 @@ import LeadingCompany4 from "./svg/LeadingCompany4";
 import LeadingCompany5 from "./svg/LeadingCompany5";
 import ViewDemoIcon from "./svg/ViewDemoIcon";
 
-
 export default function FirstSection() {
 	const leadingCompanies = [
 		<LeadingCompany1 key={0} />,
