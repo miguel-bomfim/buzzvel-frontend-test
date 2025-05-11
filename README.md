@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+obs: First of all, i would like to thanks for the opportunity! This test was really cool to done, but i couldn't finished it with perfection. Right now i have a full time job that takes all my time, 6x1 every week. I wish i had more time. 
+
+Project Link: https://buzzvel-frontend-test.vercel.app/
 
 ## Getting Started
 
