@@ -81,7 +81,7 @@ export default function SecondSection() {
 
       <div className="relative max-w-2xl w-full md:justify-self-center">
         {/* Decorative orange half-circle */}
-        <Blob1 className="absolute -left-20 top-0 -z-10 md:block h-full md:-w-[60%] w-[80%]" />
+        <Blob1 className="absolute -left-20 top-0 -z-10 md:block h-[90%] md:-w-[60%] w-[80%]" />
 
         {/* Main image & cards */}
         <div className="relative z-10">

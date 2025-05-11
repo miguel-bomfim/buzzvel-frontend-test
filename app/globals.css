@@ -17,3 +17,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.swiper-button-next {
+  padding-right: 62px
+}
+
+.swiper-button-prev {
+  padding-left: 62px
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: black !important;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+
+
+.swiper-button-disabled {
+  color: white !important
+}
+ 

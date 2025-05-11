@@ -10,7 +10,7 @@ import NinthSection from "./components/NinthSection";
 
 export default function Home() {
 	return (
-		<main>
+		<main className="overflow-y-hidden">
 			<FirstSection />
 			<SecondSection />
 			<ThirdSection />
